@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -8,6 +8,9 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import Home from "./pages/Home";
+import Header from "./components/header";
 
 // Construct our GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -33,6 +36,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -47,7 +51,7 @@ function App() {
           </Routes>
         </div>
         <div>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </Router>
     </ApolloProvider>

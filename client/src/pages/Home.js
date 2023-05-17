@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { Typography } from "@mui/material";
 
 const Home = () => {
+
+    
     return (
-        <>
-        <h1>Deck Arkitekt</h1>
-        </>
+        <main>
+            {/* <p className="hello">Hello World!</p> */}
+        </main>
     )
 }
 
