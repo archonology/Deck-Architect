@@ -1,27 +1,59 @@
-body {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 700;
-  font-size: larger;
+html, body, h3, h5, h6, p {
+  font-family: 'Cormorant Garamond Light', serif;
+  font-weight: 300;
+line-height: 1.2;
 }
 
 main {
   margin: 1em;
+}
 
+h1 {
+  font-family: 'Cormorant Garamond Light', serif;
+  font-weight: 300;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+background-color: hwb(0 0% 100% / 0.816);
 }
 
 .footer {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 700;
-  font-size: 18px;
+  font-family: 'Cormorant Garamond Light', serif;
+  font-weight: 300;
+  font-size: 16px;
   text-align: center;
+}
+
+.cardType {
+  padding: .6rem;
+  border: 1px solid black;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+
+
+.drawer {
+    font-family: 'Cormorant Garamond Light', serif;
+      font-weight: 300;
+      font-size: 16px;
 }
 
 a:hover {
   text-decoration: none;
   color: inherit;
+}
+
+.icons:hover {
+  color: rgba(0, 0, 0, 0.582);
+}
+
+
+@media screen and ( max-width: 525px) {
+  .cardText {
+    margin-top: .75em;
+    text-align: center;
+  }
 }

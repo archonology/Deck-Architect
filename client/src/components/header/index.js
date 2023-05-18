@@ -27,6 +27,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import LogoutIcon from '@mui/icons-material/Logout';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
+import AddIcon from '@mui/icons-material/Add';
 import { Link } from "@mui/material";
 
 const drawerWidth = 240;
@@ -111,37 +112,37 @@ const Header = () => {
 
     return (
         <>
-        <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
-                <AppBar position="fixed" open={open} sx={{ backgroundColor: "black" }}>
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        sx={{
-                            marginRight: 5,
-                            ...(open && { display: 'none' }),
-                        }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                       <a href="/" color="inherit" underline="none"><Typography variant="h3" noWrap component="div" sx={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: "bold"}}>
-                        Dek Architeckt
-                    </Typography></a>
-                </Toolbar>
-            </AppBar>
-            <Drawer variant="permanent" open={open}>
-                <DrawerHeader>
-                    <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-                    </IconButton>
-                </DrawerHeader>
-                <Divider />
-                <List>
-              
-                       <a href="/search"><ListItem disablePadding sx={{ display: 'block' }}>
+            <Box sx={{ display: 'flex' }}>
+                <CssBaseline />
+                <AppBar position="fixed" open={open} sx={{ backgroundColor: "black",  }}>
+                    <Toolbar>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            onClick={handleDrawerOpen}
+                            edge="start"
+                            sx={{
+                                marginRight: 5,
+                                ...(open && { display: 'none' }),
+                            }}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <a href="/" color="inherit" underline="none"><Typography variant="h3" noWrap component="div" sx={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: "bold" }}>
+                            Dek Architeckt
+                        </Typography></a>
+                    </Toolbar>
+                </AppBar>
+                <Drawer variant="permanent" open={open}>
+                    <DrawerHeader>
+                        <IconButton onClick={handleDrawerClose}>
+                            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+                        </IconButton>
+                    </DrawerHeader>
+                    <Divider />
+                    <List>
+
+                        <a href="/search"><ListItem disablePadding sx={{ display: 'block' }}>
                             <ListItemButton
                                 sx={{
                                     minHeight: 48,
@@ -156,13 +157,13 @@ const Header = () => {
                                         justifyContent: 'center',
                                     }}
                                 >
-                                   <SearchIcon /> 
+                                    <SearchIcon />
                                 </ListItemIcon>
                                 <ListItemText primary={"Search"} sx={{ opacity: open ? 1 : 0 }} />
                             </ListItemButton>
-                        </ListItem></a> 
+                        </ListItem></a>
 
-                        <ListItem disablePadding sx={{ display: 'block' }}>
+                        <a href="/mysterycard"><ListItem disablePadding sx={{ display: 'block' }}>
                             <ListItemButton
                                 sx={{
                                     minHeight: 48,
@@ -181,13 +182,13 @@ const Header = () => {
                                 </ListItemIcon>
                                 <ListItemText primary={"Mystery Card"} sx={{ opacity: open ? 1 : 0 }} />
                             </ListItemButton>
-                        </ListItem>
-                 
-                </List>
-                <Divider />
+                        </ListItem></a>
+
+                    </List>
+                    <Divider />
                     <List>
 
-                        <ListItem disablePadding sx={{ display: 'block' }}>
+                       <a href="/about"><ListItem disablePadding sx={{ display: 'block' }}>
                             <ListItemButton
                                 sx={{
                                     minHeight: 48,
@@ -206,9 +207,9 @@ const Header = () => {
                                 </ListItemIcon>
                                 <ListItemText primary={"About"} sx={{ opacity: open ? 1 : 0 }} />
                             </ListItemButton>
-                        </ListItem>
-                        
-                        <ListItem disablePadding sx={{ display: 'block' }}>
+                        </ListItem></a>
+
+                        <a href="/dashboard"><ListItem disablePadding sx={{ display: 'block' }}>
                             <ListItemButton
                                 sx={{
                                     minHeight: 48,
@@ -227,8 +228,8 @@ const Header = () => {
                                 </ListItemIcon>
                                 <ListItemText primary={"Dashboard"} sx={{ opacity: open ? 1 : 0 }} />
                             </ListItemButton>
-                        </ListItem>
-                       
+                        </ListItem></a>
+
                         <ListItem disablePadding sx={{ display: 'block' }}>
                             <ListItemButton
                                 sx={{
@@ -271,10 +272,31 @@ const Header = () => {
                             </ListItemButton>
                         </ListItem>
 
-                </List>
-            </Drawer>
-           
-        </Box>
+                        <ListItem disablePadding sx={{ display: 'block' }}>
+                            <ListItemButton
+                                sx={{
+                                    minHeight: 48,
+                                    justifyContent: open ? 'initial' : 'center',
+                                    px: 2.5,
+                                }}
+                            >
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : 'auto',
+                                        justifyContent: 'center',
+                                    }}
+                                >
+                                    <AddIcon />
+                                </ListItemIcon>
+                                <ListItemText primary={"Create New Deck"} sx={{ opacity: open ? 1 : 0 }} />
+                            </ListItemButton>
+                        </ListItem>
+
+                    </List>
+                </Drawer>
+
+            </Box>
         </>
     )
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { styled, alpha, useTheme } from '@mui/material/styles';
 import { Typography, Box } from "@mui/material";
+import Card from "../components/Card";
 
 const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
@@ -20,7 +21,7 @@ const Search = () => {
             <Box component="main" sx={{ flexGrow: 1, p: 3, marginLeft: "3em" }}>
                 <DrawerHeader />
                 <h1>Search</h1>
-                <Typography paragraph>
+                <Typography paragraph sx={{ fontFamily: "'Cormorant Garamond Light', serif", fontWeight: "300", fontSize: "20px" }}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
                     enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
@@ -34,19 +35,7 @@ const Search = () => {
                     consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
                     sapien faucibus et molestie ac.
                 </Typography>
-                <Typography paragraph>
-                    Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-                    eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-                    neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-                    tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-                    sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-                    tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-                    gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-                    et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-                    tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-                    eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-                    posuere sollicitudin aliquam ultrices sagittis orci a.
-                </Typography>
+                <Card />
             </Box>
         </main>
     )
