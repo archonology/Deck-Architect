@@ -1,14 +1,27 @@
 body {
-font-family: 'Cormorant Garamond', serif;
-font-weight: 700;
-font-size: larger;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: larger;
 }
 
 main {
   margin: 1em;
-  
+
 }
 
-/* .hello {
-font-family: 'Cormorant Garamond', serif;
-} */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+}
+
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}

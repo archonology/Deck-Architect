@@ -12,13 +12,14 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 
-const Home = () => {
+const Search = () => {
 
-    
+
     return (
         <main>
             <Box component="main" sx={{ flexGrow: 1, p: 3, marginLeft: "3em" }}>
                 <DrawerHeader />
+                <h1>Search</h1>
                 <Typography paragraph>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
@@ -51,4 +52,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default Search;
