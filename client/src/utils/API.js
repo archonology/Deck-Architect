@@ -5,5 +5,5 @@ export const searchMagicCards = (name, type, subtype, supertype, setname, colors
 }
 
 export const mysteryCardSearch = () => {
-    return fetch(`https://api.magicthegathering.io/v1/cards?pageSize=1;contains=imageUrl;random=true`, { mode: "cors" })
+    return fetch(`https://api.magicthegathering.io/v1/cards?pageSize=100;contains=imageUrl;random=true`, { mode: "cors" })
 }

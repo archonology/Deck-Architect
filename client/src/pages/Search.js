@@ -55,7 +55,7 @@ const Search = () => {
                     color="primary"
                     sx={{ marginTop: "1em", maxWidth: "400px", padding: "1em" }}
                 >
-                    Get a Mystery Card
+                    Get 100 Random Cards
                 </Button>
                 <Typography paragraph sx={{ fontFamily: "'Cormorant Garamond Light', serif", fontWeight: "300", fontSize: "20px" }}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
