@@ -53,8 +53,8 @@ export const flavors = [
         source: "Takara, to Eladamri"
     },
     {
-        flavor: "",
-        source: ""
+        flavor: "I don't understand why he works so hard on a device to duplicate a sound so easily made with hand and armpit.",
+        source: "Barrin, progress report"
     },
     {
         flavor: "",
