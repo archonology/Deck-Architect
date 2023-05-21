@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { styled, alpha, useTheme } from '@mui/material/styles';
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, Button } from "@mui/material";
 import Card from "../components/Card";
+import { mysteryCardSearch } from "../utils/API";
 
 const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
@@ -15,27 +16,57 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 const Search = () => {
 
+    const [mysteryCard, setMysteryCard] = useState([]);
+
+    const handleSubmit = async () => {
+        try {
+            const response = await mysteryCardSearch();
+
+            if (!response.ok) {
+                throw new Error("something went wrong!");
+            }
+
+            const { cards } = await response.json();
+            const cardData = cards.map((card) => ({
+                cardId: card.id,
+                name: card.name,
+                type: card.type,
+                text: card.text,
+                flavor: card.flavor,
+                set: card.set,
+                rarity: card.rarity,
+                image: card.imageUrl,
+            }));
+
+            setMysteryCard(cardData);
+        } catch (err) {
+            console.error(err);
+        }
+    };
 
     return (
         <main>
             <Box component="main" sx={{ flexGrow: 1, p: 3, marginLeft: "3em" }}>
                 <DrawerHeader />
                 <h1>Search</h1>
+                <Button
+                    onClick={handleSubmit}
+                    variant="text"
+                    color="primary"
+                    sx={{ marginTop: "1em", maxWidth: "400px", padding: "1em" }}
+                >
+                    Get a Mystery Card
+                </Button>
                 <Typography paragraph sx={{ fontFamily: "'Cormorant Garamond Light', serif", fontWeight: "300", fontSize: "20px" }}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
                     enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
                     imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
                     Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-                    Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-                    adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-                    nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-                    leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-                    feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-                    consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-                    sapien faucibus et molestie ac.
                 </Typography>
-                <Card />
+                {mysteryCard.map((card) => {
+                    return <Card key={card.id} card={card} />;
+                })}
             </Box>
         </main>
     )

@@ -129,7 +129,7 @@ const Header = () => {
                             <MenuIcon />
                         </IconButton>
                         <a href="/" color="inherit" underline="none"><Typography variant="h3" noWrap component="div" sx={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: "bold" }}>
-                            Dek Architeckt
+                            Dek Arkitekt
                         </Typography></a>
                     </Toolbar>
                 </AppBar>
